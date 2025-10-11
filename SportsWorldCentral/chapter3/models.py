@@ -2,7 +2,7 @@
 
 
 # Firstly import the data types that SQLAlchemy will use for the database fields.
-from sqlalchemy import Column, ForeignKey, Integer, String, Date
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, Date
 
 # Then import the relationship function from SQLAlchemy to define the relationships between the tables.
 from sqlalchemy.orm import relationship
@@ -67,7 +67,7 @@ class Team(Base):
 
 
 class TeamPlayer(Base):
-    __tablename_ = "team_player"
+    __tablename__ = "team_player"
 
     team_id = Column(Integer, ForeignKey("team.team_id"), primary_key=True, index=True)
     player_id = Column(Integer, ForeignKey("player.player_id"), primary_key=True, index=True)
